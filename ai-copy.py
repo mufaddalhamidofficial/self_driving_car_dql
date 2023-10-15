@@ -14,16 +14,13 @@ from torch.autograd import Variable
 
 # Creating the architecture of the Neural Network
 
-
 class Network(nn.Module):
     
     def __init__(self, input_size, nb_action):
         super(Network, self).__init__()
         self.input_size = input_size
         self.nb_action = nb_action
-        # Full connection 1
         self.fc1 = nn.Linear(input_size, 30)
-        # Full connection 2
         self.fc2 = nn.Linear(30, nb_action)
     
     def forward(self, state):
